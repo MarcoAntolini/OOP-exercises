@@ -5,7 +5,8 @@ import static it.unibo.oop.lab04.Assertions.assertEquals;
 //CHECKSTYLE:OFF
 public final class TestBankAccount {
 
-    // Tolerance for double comparisons, to account for floating-point rounding errors
+    // Tolerance for double comparisons, to account for floating-point rounding
+    // errors
     private static final double EPSILON = 1e-7;
 
     private TestBankAccount() {
@@ -22,8 +23,7 @@ public final class TestBankAccount {
         final double expectedFinal2 = 19994.8;
 
         final BankAccount acc1 = new SimpleBankAccount(usr1.getUserID(), 0);
-        // TODO Change the implementation from StrictBankAccount to ExtendedStrictBankAccount
-        final BankAccount acc2 = new StrictBankAccount(usr2.getUserID(), 0);
+        final BankAccount acc2 = new ExtendedStrictBankAccount(usr2.getUserID(), 0);
         final var balance1 = usr1.getName() + " " + usr1.getSurname() + " account balance";
         final var balance2 = usr2.getName() + " " + usr2.getSurname() + " account balance";
 
