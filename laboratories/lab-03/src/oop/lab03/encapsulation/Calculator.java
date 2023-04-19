@@ -44,21 +44,23 @@ public class Calculator {
 
     public static void main(final String[] args) {
         Calculator calc = new Calculator();
+        String nOpDone = "nOpDone=";
+        String lastRes = "lastRes=";
 
         System.out.println("1+2=" + calc.add(1, 2));
-        System.out.println("nOpDone=" + calc.nOpDone);
-        System.out.println("lastRes=" + calc.lastRes + "\n");
+        System.out.println(nOpDone + calc.nOpDone);
+        System.out.println(lastRes + calc.lastRes + "\n");
 
         System.out.println("-1-(+2)=" + calc.sub(-1, 2));
-        System.out.println("nOpDone=" + calc.nOpDone);
-        System.out.println("lastRes=" + calc.lastRes + "\n");
+        System.out.println(nOpDone + calc.nOpDone);
+        System.out.println(lastRes + calc.lastRes + "\n");
 
         System.out.println("2*1=" + calc.mul(2, 1));
-        System.out.println("nOpDone=" + calc.nOpDone);
-        System.out.println("lastRes=" + calc.lastRes + "\n");
+        System.out.println(nOpDone + calc.nOpDone);
+        System.out.println(lastRes + calc.lastRes + "\n");
 
         System.out.println("8/4=" + calc.div(8, 4));
-        System.out.println("nOpDone=" + calc.nOpDone);
-        System.out.println("lastRes=" + calc.lastRes + "\n");
+        System.out.println(nOpDone + calc.nOpDone);
+        System.out.println(lastRes + calc.lastRes + "\n");
     }
 }

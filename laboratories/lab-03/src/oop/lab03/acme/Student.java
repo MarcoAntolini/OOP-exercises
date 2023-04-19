@@ -11,7 +11,11 @@ public class Student implements User {
     private final int matriculationYear;
     private final String password;
 
-    public Student(final int id, final String name, final String surname, final String password,
+    public Student(
+            final int id,
+            final String name,
+            final String surname,
+            final String password,
             final int matriculationYear) {
         this.id = id;
         this.name = name;
@@ -21,7 +25,7 @@ public class Student implements User {
     }
 
     public Student(final int id, final String name, final String surname, final String password) {
-        this(id, name, surname, "password", Year.now().getValue());
+        this(id, name, surname, password, Year.now().getValue());
     }
 
     public String getName() {

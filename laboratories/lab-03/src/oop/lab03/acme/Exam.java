@@ -10,7 +10,11 @@ public class Exam {
     private final ExamRoom room;
     private Student[] students;
 
-    public Exam(final int id, final int maxStudents, final String courseName, final Professor professor,
+    public Exam(
+            final int id,
+            final int maxStudents,
+            final String courseName,
+            final Professor professor,
             final ExamRoom room) {
         this.id = id;
         this.maxStudents = maxStudents;

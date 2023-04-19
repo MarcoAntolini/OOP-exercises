@@ -18,8 +18,15 @@ public class Smartphone {
     private boolean has3G;
     private boolean hasNFC;
 
-    public Smartphone(final int nCPU, final int ram, final int sdSize, final String brand, final String model,
-            final boolean hasGPS, final boolean has3G, final boolean hasNFC) {
+    public Smartphone(
+            final int nCPU,
+            final int ram,
+            final int sdSize,
+            final String brand,
+            final String model,
+            final boolean hasGPS,
+            final boolean has3G,
+            final boolean hasNFC) {
         this.nCPU = nCPU;
         this.ram = ram;
         this.sdSize = sdSize;
@@ -35,7 +42,7 @@ public class Smartphone {
     }
 
     public Smartphone(final String brand, final String model, final int sdSize) {
-        this(DEF_N_CPU, DEF_RAM_SIZE, DEF_SD_SIZE, brand, model, DEF_HAS_GPS, DEF_HAS_3G, DEF_HAS_NFC);
+        this(DEF_N_CPU, DEF_RAM_SIZE, sdSize, brand, model, DEF_HAS_GPS, DEF_HAS_3G, DEF_HAS_NFC);
     }
 
     public Smartphone(final String brand, final String model, final boolean hasGPS, final boolean has3G) {

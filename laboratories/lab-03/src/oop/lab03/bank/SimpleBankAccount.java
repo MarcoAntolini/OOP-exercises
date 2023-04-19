@@ -4,7 +4,7 @@ import oop.lab03.bank.interfaces.BankAccount;
 
 public class SimpleBankAccount implements BankAccount {
 
-    protected static double ATM_TRANSACTION_FEE = 1;
+    protected static final double ATM_TRANSACTION_FEE = 1;
     private int userID;
     private double balance;
     private int nTransactions;
@@ -59,6 +59,10 @@ public class SimpleBankAccount implements BankAccount {
 
     @Override
     public void chargeManagementFees(final int usrID) {
+        if (checkUser(usrID)) {
+            incrementTransactions();
+            this.balance -= ATM_TRANSACTION_FEE * this.nTransactions;
+        }
     }
 
     protected boolean checkUser(final int id) {

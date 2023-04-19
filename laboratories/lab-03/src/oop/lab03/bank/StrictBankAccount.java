@@ -2,8 +2,8 @@ package oop.lab03.bank;
 
 public class StrictBankAccount extends SimpleBankAccount {
 
-    private static double MANAGEMENT_FEE = 5;
-    private static double FEE_PER_TRANSACTION = 0.1;
+    private static final double MANAGEMENT_FEE = 5;
+    private static final double FEE_PER_TRANSACTION = 0.1;
 
     public StrictBankAccount(final int usrID, final double amount) {
         super(usrID, amount);
