@@ -21,7 +21,7 @@ public class SimpleBankAccount implements BankAccount {
 
     public void computeManagementFees(final int usrID) {
         if (checkUser(usrID)) {
-            this.balance -= SimpleBankAccount.MANAGEMENT_FEE;
+            this.balance -= MANAGEMENT_FEE;
         }
     }
 
@@ -30,7 +30,7 @@ public class SimpleBankAccount implements BankAccount {
     }
 
     public void depositFromATM(final int usrID, final double amount) {
-        this.deposit(usrID, amount - SimpleBankAccount.ATM_TRANSACTION_FEE);
+        this.deposit(usrID, amount - ATM_TRANSACTION_FEE);
     }
 
     public double getBalance() {
@@ -65,7 +65,7 @@ public class SimpleBankAccount implements BankAccount {
     }
 
     public void withdrawFromATM(final int usrID, final double amount) {
-        this.withdraw(usrID, amount + SimpleBankAccount.ATM_TRANSACTION_FEE);
+        this.withdraw(usrID, amount + ATM_TRANSACTION_FEE);
     }
 
 }

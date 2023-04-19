@@ -8,16 +8,14 @@ public class ClassicBankAccount extends AbstractBankAccount {
 
     @Override
     public void computeManagementFees(int usrID) {
-        if (this.getUsrID() == usrID) {
-            if (this.getNTransactions() > 0) {
-                this.computeFee();
-            }
+        if (this.checkUser(usrID) && (this.getNTransactions() > 0)) {
+            this.computeFee();
         }
     }
 
     @Override
     public void deposit(int usrID, double amount) {
-        if (this.getUsrID() == usrID) {
+        if (this.checkUser(usrID)) {
             this.setBalance(this.getBalance() + amount);
             this.setNTransactions(this.getNTransactions() + 1);
         }
@@ -25,8 +23,8 @@ public class ClassicBankAccount extends AbstractBankAccount {
 
     @Override
     public void depositFromATM(int usrID, double amount) {
-        if (this.getUsrID() == usrID) {
-            this.setBalance(this.getBalance() + amount - AbstractBankAccount.ATM_TRANSACTION_FEE);
+        if (this.checkUser(usrID)) {
+            this.setBalance(this.getBalance() + amount - ATM_TRANSACTION_FEE);
             this.setNTransactions(this.getNTransactions() + 1);
         }
     }
@@ -43,21 +41,17 @@ public class ClassicBankAccount extends AbstractBankAccount {
 
     @Override
     public void withdraw(int usrID, double amount) {
-        if (this.getUsrID() == usrID) {
-            if (this.isWithdrawAllowed(amount)) {
-                this.setBalance(this.getBalance() - amount - AbstractBankAccount.TRANSACTION_FEE);
-                this.setNTransactions(this.getNTransactions() + 1);
-            }
+        if (this.checkUser(usrID) && (this.isWithdrawAllowed(amount))) {
+            this.setBalance(this.getBalance() - amount - TRANSACTION_FEE);
+            this.setNTransactions(this.getNTransactions() + 1);
         }
     }
 
     @Override
     public void withdrawFromATM(int usrID, double amount) {
-        if (this.getUsrID() == usrID) {
-            if (this.isWithdrawAllowed(amount)) {
-                this.setBalance(this.getBalance() - amount - AbstractBankAccount.ATM_TRANSACTION_FEE);
-                this.setNTransactions(this.getNTransactions() + 1);
-            }
+        if (this.checkUser(usrID) && (this.isWithdrawAllowed(amount))) {
+            this.setBalance(this.getBalance() - amount - ATM_TRANSACTION_FEE);
+            this.setNTransactions(this.getNTransactions() + 1);
         }
     }
 
@@ -68,7 +62,7 @@ public class ClassicBankAccount extends AbstractBankAccount {
 
     @Override
     protected void computeFee() {
-        this.setBalance(this.getBalance() - AbstractBankAccount.MANAGEMENT_FEE);
+        this.setBalance(this.getBalance() - MANAGEMENT_FEE);
         this.setNTransactions(0);
     }
 }

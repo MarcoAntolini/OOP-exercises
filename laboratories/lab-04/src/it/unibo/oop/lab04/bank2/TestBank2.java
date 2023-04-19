@@ -6,10 +6,12 @@ import static it.unibo.oop.lab04.Assertions.assertEquals;
 
 public final class TestBank2 {
 
-    // Tolerance for double comparisons, to account for floating-point rounding errors
+    // Tolerance for double comparisons, to account for floating-point rounding
+    // errors
     private static final double EPSILON = 1e-7;
 
-    private TestBank2() { }
+    private TestBank2() {
+    }
 
     public static void main(final String[] args) {
         final var usr1 = new AccountHolder("Mario", "Rossi", 1);
@@ -21,11 +23,8 @@ public final class TestBank2 {
         final double expectedFinal1 = 4995;
         final double expectedFinal2 = 19994.8;
 
-        /*
-         *  TODO assign actual instances of the realized classes
-         */
-        final BankAccount acc1 = null;
-        final BankAccount acc2 = null;
+        final BankAccount acc1 = new ClassicBankAccount(0, expectedFinal1);
+        final BankAccount acc2 = new RestrictedBankAccount(0, expectedFinal2);
         final var balance1 = usr1.getName() + " " + usr1.getSurname() + " account balance";
         final var balance2 = usr2.getName() + " " + usr2.getSurname() + " account balance";
 

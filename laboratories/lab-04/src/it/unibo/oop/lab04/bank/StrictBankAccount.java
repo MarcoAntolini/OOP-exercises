@@ -20,7 +20,7 @@ public class StrictBankAccount implements BankAccount {
     }
 
     public void computeManagementFees(final int usrID) {
-        final double feeAmount = MANAGEMENT_FEE + (nTransactions * StrictBankAccount.TRANSACTION_FEE);
+        final double feeAmount = MANAGEMENT_FEE + (nTransactions * TRANSACTION_FEE);
         if (checkUser(usrID) && isWithdrawAllowed(feeAmount)) {
             balance -= feeAmount;
             nTransactions = 0;
@@ -32,7 +32,7 @@ public class StrictBankAccount implements BankAccount {
     }
 
     public void depositFromATM(final int usrID, final double amount) {
-        this.deposit(usrID, amount - StrictBankAccount.ATM_TRANSACTION_FEE);
+        this.deposit(usrID, amount - ATM_TRANSACTION_FEE);
     }
 
     public double getBalance() {
@@ -65,6 +65,6 @@ public class StrictBankAccount implements BankAccount {
     }
 
     public void withdrawFromATM(final int usrID, final double amount) {
-        this.withdraw(usrID, amount + StrictBankAccount.ATM_TRANSACTION_FEE);
+        this.withdraw(usrID, amount + ATM_TRANSACTION_FEE);
     }
 }
