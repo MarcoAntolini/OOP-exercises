@@ -31,18 +31,18 @@ public class ClassicBankAccount extends AbstractBankAccount {
 
     @Override
     public double getBalance() {
-        return this.getBalance();
+        return this.balance;
     }
 
     @Override
     public int getNTransactions() {
-        return this.getNTransactions();
+        return this.nTransactions;
     }
 
     @Override
     public void withdraw(int usrID, double amount) {
         if (this.checkUser(usrID) && (this.isWithdrawAllowed(amount))) {
-            this.setBalance(this.getBalance() - amount - TRANSACTION_FEE);
+            this.setBalance(this.getBalance() - amount);
             this.setNTransactions(this.getNTransactions() + 1);
         }
     }
@@ -57,7 +57,7 @@ public class ClassicBankAccount extends AbstractBankAccount {
 
     @Override
     protected boolean isWithdrawAllowed(final double amount) {
-        return this.getBalance() >= amount;
+        return true;
     }
 
     @Override

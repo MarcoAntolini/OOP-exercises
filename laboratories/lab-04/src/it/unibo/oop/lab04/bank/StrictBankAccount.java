@@ -48,7 +48,7 @@ public class StrictBankAccount implements BankAccount {
     }
 
     private boolean isWithdrawAllowed(final double amount) {
-        return balance > amount;
+        return balance >= amount;
     }
 
     private void transactionOp(final int usrID, final double amount) {

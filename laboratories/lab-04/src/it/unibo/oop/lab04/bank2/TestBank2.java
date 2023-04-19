@@ -23,8 +23,8 @@ public final class TestBank2 {
         final double expectedFinal1 = 4995;
         final double expectedFinal2 = 19994.8;
 
-        final BankAccount acc1 = new ClassicBankAccount(0, expectedFinal1);
-        final BankAccount acc2 = new RestrictedBankAccount(0, expectedFinal2);
+        final BankAccount acc1 = new ClassicBankAccount(1, 0);
+        final BankAccount acc2 = new RestrictedBankAccount(2, 0);
         final var balance1 = usr1.getName() + " " + usr1.getSurname() + " account balance";
         final var balance2 = usr2.getName() + " " + usr2.getSurname() + " account balance";
 
