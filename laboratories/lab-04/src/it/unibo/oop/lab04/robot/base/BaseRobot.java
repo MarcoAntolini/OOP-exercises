@@ -69,7 +69,7 @@ public class BaseRobot implements Robot {
 
     /**
      * @param operationCost
-     *            how much
+     *                      how much
      * @return
      */
     protected boolean isBatteryEnough(final double operationCost) {
@@ -96,7 +96,7 @@ public class BaseRobot implements Robot {
                     + ") the robot is touching the world boundary: current position is " + environment.getPosition());
         } else {
             log("Can not move, not enough battery. Required: " + getBatteryRequirementForMovement()
-                + ", available: " + batteryLevel + " (" + getBatteryLevel() + "%)");
+                    + ", available: " + batteryLevel + " (" + getBatteryLevel() + "%)");
         }
         return false;
     }

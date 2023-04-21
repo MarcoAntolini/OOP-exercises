@@ -1,25 +1,34 @@
 package it.unibo.oop.lab04.robot.test;
 
+import it.unibo.oop.lab04.robot.composable.AtomicBattery;
+import it.unibo.oop.lab04.robot.composable.BorderNavigator;
+import it.unibo.oop.lab04.robot.composable.ComposableRobot;
+import it.unibo.oop.lab04.robot.composable.PrehensileArm;
+
 /**
  * Utility class for testing composable robots
  * 
  */
 public final class TestComposableRobot {
 
-    private static final int CYCLES = 200;
-
     private TestComposableRobot() {
     }
 
     public static void main(final String[] args) {
 
-        /*
-         * Write your own test.
-         * 
-         * You will need a robot with an atomic battery, two arms, and a
-         * navigator system. Turn on the battery only when the level is below
-         * 50%.
-         */
+        AtomicBattery battery = new AtomicBattery();
+        BorderNavigator navigator = new BorderNavigator();
+        PrehensileArm rightArm = new PrehensileArm("Right Arm");
+        PrehensileArm leftArm = new PrehensileArm("Left Arm");
+
+        ComposableRobot robot = new ComposableRobot("Composable Robot");
+
+        robot.addComponent(battery);
+        robot.addComponent(navigator);
+        robot.addComponent(rightArm);
+        robot.addComponent(leftArm);
+
+        robot.startComponents();
 
     }
 }

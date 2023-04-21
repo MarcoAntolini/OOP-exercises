@@ -10,7 +10,8 @@ import static it.unibo.oop.lab04.Assertions.assertEquals;
  */
 public final class TestRobots {
 
-    // Tolerance for double comparisons, to account for floating-point rounding errors
+    // Tolerance for double comparisons, to account for floating-point rounding
+    // errors
     private static final double EPSILON = 1e-7;
 
     private TestRobots() {
@@ -45,8 +46,8 @@ public final class TestRobots {
             steps = stepsDefault;
         } else {
             assertEquals(r0pos,
-                new RobotPosition(RobotEnvironment.X_UPPER_LIMIT, RobotEnvironment.Y_UPPER_LIMIT),
-                r0.getPosition());
+                    new RobotPosition(RobotEnvironment.X_UPPER_LIMIT, RobotEnvironment.Y_UPPER_LIMIT),
+                    r0.getPosition());
         }
         while (r0.moveRight()) {
             steps--;
@@ -55,11 +56,10 @@ public final class TestRobots {
             assertEquals(r0bat, true, r0.getBatteryLevel() < BaseRobot.MOVEMENT_DELTA_CONSUMPTION);
             r0.recharge();
             assertEquals(r0bat, BaseRobot.BATTERY_FULL, r0.getBatteryLevel(), EPSILON);
-            steps = stepsDefault;
         } else {
             assertEquals(r0pos,
-                new RobotPosition(RobotEnvironment.X_UPPER_LIMIT, RobotEnvironment.Y_UPPER_LIMIT),
-                r0.getPosition());
+                    new RobotPosition(RobotEnvironment.X_UPPER_LIMIT, RobotEnvironment.Y_UPPER_LIMIT),
+                    r0.getPosition());
         }
 
     }
